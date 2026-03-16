@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Devis | Porte Acoustique</title>
+    <meta name="description" content="Demandez votre devis gratuit pour une porte acoustique. Réponse sous 24h.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <div class="top-bar-left">
+            <span class="top-bar-item">&#9742; <a href="tel:+33123456789">+33 (0)1 23 45 67 89</a></span>
+            <span class="top-bar-item">&#9993; <a href="mailto:contact@porteacoustique.fr">contact@porteacoustique.fr</a></span>
+        </div>
+        <span class="top-bar-item">Lun&ndash;Ven : 9h00 &mdash; 18h00</span>
+    </div>
+</div>
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="logo">PORTE ACOUSTIQUE<span class="logo-dot">.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="produits.html">Produits</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="a-propos.html">A propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="devis.html" class="btn btn-nav-devis">Demander un Devis</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">Accueil</a><span class="sep">/</span><span>Demande de Devis</span></div>
+    <h1>Demande de Devis Gratuit</h1>
+    <p>Remplissez le formulaire et recevez votre devis personnalisé sous 24 heures.</p>
+</div>
+
+<section class="section">
+    <div class="form-section">
+
+        <!-- Bannière de présélection (depuis page tarifs) -->
+        <div id="preselection" class="preselect-banner" style="display:none;">
+            Votre sélection &mdash;
+            Modèle&nbsp;: <strong id="preModel"></strong> &nbsp;|&nbsp;
+            Dimension&nbsp;: <strong id="preDimension"></strong> &nbsp;|&nbsp;
+            Prix indicatif&nbsp;: <strong id="prePrice" style="color:var(--price-color);"></strong>
+        </div>
+
+        <div class="form-grid">
+            <!-- Sidebar -->
+            <div class="form-sidebar">
+                <h3>Comment ça marche ?</h3>
+                <ul class="form-steps">
+                    <li>
+                        <div class="step-num">1</div>
+                        <div class="step-text">
+                            <h4>Remplissez le formulaire</h4>
+                            <p>Indiquez vos coordonnées et les détails de votre projet.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">2</div>
+                        <div class="step-text">
+                            <h4>Étude de votre demande</h4>
+                            <p>Notre équipe analyse vos besoins et prépare un devis sur mesure.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">3</div>
+                        <div class="step-text">
+                            <h4>Réception du devis</h4>
+                            <p>Vous recevez votre devis détaillé par email sous 24 heures.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="step-num">4</div>
+                        <div class="step-text">
+                            <h4>Validation &amp; installation</h4>
+                            <p>Après votre accord, nous planifions la fabrication et la pose.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div style="margin-top:1.5rem;padding:1rem;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);text-align:center;">
+                    <p style="font-weight:700;font-size:1rem;color:var(--accent);">Devis 100% gratuit</p>
+                    <p style="font-size:0.8125rem;color:var(--text-light);">Sans engagement &mdash; Réponse sous 24h</p>
+                </div>
+                <div style="margin-top:1rem;padding:1rem;background:var(--white);border-radius:var(--radius);border:1px solid var(--border);">
+                    <p style="font-size:0.8125rem;color:var(--text-light);margin-bottom:0.25rem;">Besoin d'aide immédiate ?</p>
+                    <a href="tel:+33123456789" style="font-size:1.0625rem;font-weight:700;color:var(--primary);">+33 (0)1 23 45 67 89</a>
+                </div>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="form-box">
+                <h3>Votre Demande de Devis</h3>
+                <p>Les champs marqués <span class="required">*</span> sont obligatoires.</p>
+
+                <form id="devisForm">
+                    <div class="form-section-title">Vos Coordonnées</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prenom">Prénom <span class="required">*</span></label>
+                            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom <span class="required">*</span></label>
+                            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone">Téléphone <span class="required">*</span></label>
+                            <input type="tel" id="telephone" name="telephone" required placeholder="06 12 34 56 78">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="societe">Société / Entreprise</label>
+                        <input type="text" id="societe" name="societe" placeholder="Nom de votre société (facultatif)">
+                    </div>
+
+                    <hr class="form-divider">
+                    <div class="form-section-title">Votre Projet</div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="typeProjet">Type de projet <span class="required">*</span></label>
+                            <select id="typeProjet" name="typeProjet" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="studio">Studio d'enregistrement</option>
+                                <option value="bureau">Bureau professionnel</option>
+                                <option value="medical">Cabinet médical</option>
+                                <option value="residence">Résidence / Appartement</option>
+                                <option value="salle">Salle de conférence</option>
+                                <option value="education">École / Université</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="typePorte">Type de porte <span class="required">*</span></label>
+                            <select id="typePorte" name="typePorte" required>
+                                <option value="">Sélectionnez...</option>
+                                <option value="simple">Porte simple</option>
+                                <option value="double">Double porte</option>
+                                <option value="indecis">Je ne sais pas encore</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="modele">Modèle souhaité</label>
+                            <select id="modele" name="modele">
+                                <option value="">Sélectionnez un modèle...</option>
+                                <optgroup label="Portes Simples">
+                                    <option value="ISO-PS Plus">ISO-PS Plus (Pleine)</option>
+                                    <option value="ISO-PV Plus">ISO-PV Plus (Vitrée)</option>
+                                    <option value="ISO-P2V Plus">ISO-P2V Plus (Double vitrage)</option>
+                                    <option value="ISO-PO Plus">ISO-PO Plus (Hublot)</option>
+                                </optgroup>
+                                <optgroup label="Doubles Portes">
+                                    <option value="ISO-DPS Plus">ISO-DPS Plus (Pleine)</option>
+                                    <option value="ISO-DPV Plus">ISO-DPV Plus (Vitrée)</option>
+                                    <option value="ISO-DP2V Plus">ISO-DP2V Plus (Double vitrage)</option>
+                                    <option value="ISO-DPO Plus">ISO-DPO Plus (Hublot)</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dimension">Dimension souhaitée</label>
+                            <select id="dimension" name="dimension">
+                                <option value="">Sélectionnez une dimension...</option>
+                                <optgroup label="Portes Simples">
+                                    <option value="630x2040">630 x 2040 mm</option>
+                                    <option value="730x2040">730 x 2040 mm</option>
+                                    <option value="830x2040">830 x 2040 mm</option>
+                                    <option value="930x2040">930 x 2040 mm</option>
+                                </optgroup>
+                                <optgroup label="Doubles Portes">
+                                    <option value="1230x2040">1230 x 2040 mm</option>
+                                    <option value="1430x2040">1430 x 2040 mm</option>
+                                    <option value="1730x2040">1730 x 2040 mm</option>
+                                    <option value="1930x2040">1930 x 2040 mm</option>
+                                </optgroup>
+                                <option value="sur-mesure">Sur mesure</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantite">Quantité</label>
+                        <input type="number" id="quantite" name="quantite" min="1" value="1">
+                    </div>
+
+                    <hr class="form-divider">
+                    <div class="form-section-title">Options Souhaitées</div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="finition">Finition</label>
+                            <select id="finition" name="finition">
+                                <option value="">Finition standard</option>
+                                <option value="cuir">Finition aspect cuir</option>
+                                <option value="tissu">Finition tissu</option>
+                                <option value="peinture">Peinture 2 côtés (RAL)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="serrure">Serrure</label>
+                            <select id="serrure" name="serrure">
+                                <option value="">Serrure standard</option>
+                                <option value="3points">Serrure 3 points (+389 €)</option>
+                                <option value="blindee">Porte blindée (+421 €)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="accessoires">Accessoires</label>
+                            <select id="accessoires" name="accessoires">
+                                <option value="">Aucun accessoire</option>
+                                <option value="antipanique">Barre antipanique (+756 €)</option>
+                                <option value="tige">Tige carré (+13 €)</option>
+                                <option value="clef">Clef cylindre (+32 €)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="delai">Délai souhaité</label>
+                            <select id="delai" name="delai">
+                                <option value="">Pas de contrainte</option>
+                                <option value="urgent">Urgent (sous 2 semaines)</option>
+                                <option value="1mois">Sous 1 mois</option>
+                                <option value="3mois">Sous 3 mois</option>
+                                <option value="planifie">Plus de 3 mois</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <hr class="form-divider">
+                    <div class="form-section-title">Informations Complémentaires</div>
+
+                    <div class="form-group">
+                        <label for="message">Message / Détails du projet</label>
+                        <textarea id="message" name="message" placeholder="Décrivez votre projet, dimensions spécifiques, contraintes particulières..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full" style="margin-top:0.5rem;">Envoyer ma Demande de Devis</button>
+                    <p style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:0.75rem;">En soumettant ce formulaire, vous acceptez d'être contacté par notre équipe commerciale.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h3>PORTE ACOUSTIQUE<span style="color:var(--accent)">.</span></h3>
+            <p>Leader français des portes acoustiques professionnelles depuis plus de 20 ans.</p>
+        </div>
+        <div><h4>Navigation</h4><ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="produits.html">Produits</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="a-propos.html">A propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul></div>
+        <div><h4>Produits</h4><ul>
+            <li><a href="tarifs.html#portes-simples">Portes Simples</a></li>
+            <li><a href="tarifs.html#doubles-portes">Doubles Portes</a></li>
+            <li><a href="tarifs.html#options">Options</a></li>
+            <li><a href="devis.html">Devis en ligne</a></li>
+        </ul></div>
+        <div><h4>Contact</h4><ul>
+            <li><a href="tel:+33123456789">+33 (0)1 23 45 67 89</a></li>
+            <li><a href="mailto:contact@porteacoustique.fr">contact@porteacoustique.fr</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="devis.html">Demande de devis</a></li>
+        </ul></div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Porte Acoustique. Tous droits réservés.</p>
+        <p><a href="#">Mentions légales</a> | <a href="#">Confidentialité</a></p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

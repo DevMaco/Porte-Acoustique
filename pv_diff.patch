@@ -1,0 +1,496 @@
+1,495d0
+< <!DOCTYPE html>
+< <html lang="fr">
+< <head>
+<     <meta charset="UTF-8">
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<     <title>ISO-PS Plus &mdash; Porte Acoustique Simple Pleine | Acoustica</title>
+<     <meta name="description" content="Porte acoustique simple vantail pleine ISO-PS Plus. Isolation certifi&eacute;e 42 dB Rw (EN ISO 717-1). Dimensions 630&ndash;930 mm. &Agrave; partir de 1&nbsp;186 &euro; HT. Fabrication fran&ccedil;aise.">
+<     <link rel="preconnect" href="https://fonts.googleapis.com">
+<     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<     <link rel="stylesheet" href="css/style.css">
+< </head>
+< <body>
+< 
+<     <!-- Top Bar -->
+<     <div class="top-bar">
+<         <div class="top-bar-content">
+<             <div class="top-bar-left">
+<                 <div class="top-bar-item"><span>&#9742;</span><span>+33 (0)1 23 45 67 89</span></div>
+<                 <div class="top-bar-item"><span>&#9993;</span><span>contact@acoustica.fr</span></div>
+<             </div>
+<             <div class="top-bar-item">Lun&ndash;Ven&nbsp;: 9h00 &mdash; 18h00</div>
+<         </div>
+<     </div>
+< 
+<     <!-- Navigation -->
+<     <nav class="navbar">
+<         <div class="nav-container">
+<             <a href="index.html" class="logo">ACOUSTICA<span class="logo-accent">.</span></a>
+<             <ul class="nav-links" id="navLinks">
+<                 <li><a href="index.html">Accueil</a></li>
+<                 <li><a href="produits.html" class="active">Produits</a></li>
+<                 <li><a href="tarifs.html">Tarifs</a></li>
+<                 <li><a href="a-propos.html">A propos</a></li>
+<                 <li><a href="contact.html">Contact</a></li>
+<             </ul>
+<             <div class="nav-cta">
+<                 <a href="devis.html" class="btn-primary">Demander un Devis</a>
+<             </div>
+<             <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+<         </div>
+<     </nav>
+<     <div class="nav-overlay" id="navOverlay"></div>
+< 
+<     <!-- Page Hero -->
+<     <div class="page-hero">
+<         <div class="breadcrumb">
+<             <a href="index.html">Accueil</a>
+<             <span>/</span>
+<             <a href="produits.html">Produits</a>
+<             <span>/</span>
+<             <span class="current">ISO-PS Plus</span>
+<         </div>
+<         <div class="hero-product-badge">Porte Simple &middot; 42 dB Rw</div>
+<         <h1 class="display-title">ISO-PS Plus</h1>
+<         <p>Porte acoustique simple vantail pleine &mdash; Isolation phonique certifi&eacute;e pour espaces professionnels exigeants</p>
+<         <div class="hero-pills">
+<             <span class="hero-pill">Fabrication fran&ccedil;aise</span>
+<             <span class="hero-pill">EN ISO 717-1</span>
+<             <span class="hero-pill">Garantie 10 ans</span>
+<             <span class="hero-pill">Seuil automatique inclus</span>
+<             <span class="hero-pill">Pose disponible</span>
+<         </div>
+<     </div>
+< 
+<     <!-- Product Detail -->
+<     <section class="product-detail-section">
+<         <div class="product-detail-main">
+< 
+<             <!-- Colonne gauche : blueprint + stats -->
+<             <div class="door-viz">
+<                 <div class="door-blueprint">
+<                     <svg viewBox="0 0 240 310" xmlns="http://www.w3.org/2000/svg">
+<                         <defs>
+<                             <pattern id="grid-ps" width="20" height="20" patternUnits="userSpaceOnUse">
+<                                 <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(50,100,200,0.07)" stroke-width="0.5"/>
+<                             </pattern>
+<                             <linearGradient id="leaf-ps" x1="0%" y1="0%" x2="100%" y2="100%">
+<                                 <stop offset="0%" style="stop-color:rgba(15,52,96,0.75)"/>
+<                                 <stop offset="100%" style="stop-color:rgba(10,35,70,0.55)"/>
+<                             </linearGradient>
+<                         </defs>
+<                         <rect width="240" height="310" fill="url(#grid-ps)"/>
+<                         <!-- Cotes largeur -->
+<                         <line x1="40" y1="300" x2="200" y2="300" stroke="rgba(100,160,220,0.5)" stroke-width="0.75"/>
+<                         <line x1="40" y1="295" x2="40" y2="305" stroke="rgba(100,160,220,0.5)" stroke-width="0.75"/>
+<                         <line x1="200" y1="295" x2="200" y2="305" stroke="rgba(100,160,220,0.5)" stroke-width="0.75"/>
+<                         <text x="120" y="309" text-anchor="middle" fill="rgba(100,160,220,0.85)" font-size="8" font-family="Inter,sans-serif">630 &mdash; 930 mm</text>
+<                         <!-- Cotes hauteur -->
+<                         <line x1="18" y1="20" x2="18" y2="285" stroke="rgba(100,160,220,0.5)" stroke-width="0.75"/>
+<                         <line x1="13" y1="20" x2="23" y2="20" stroke="rgba(100,160,220,0.5)" stroke-width="0.75"/>
+<                         <line x1="13" y1="285" x2="23" y2="285" stroke="rgba(100,160,220,0.5)" stroke-width="0.75"/>
+<                         <text x="7" y="157" text-anchor="middle" fill="rgba(100,160,220,0.85)" font-size="8" font-family="Inter,sans-serif" transform="rotate(-90,7,152)">2040 mm</text>
+<                         <!-- Titre schema -->
+<                         <text x="120" y="11" text-anchor="middle" fill="rgba(197,157,95,0.7)" font-size="7" font-family="Inter,sans-serif" letter-spacing="2" font-weight="600">ISO-PS PLUS &mdash; VUE DE FACE</text>
+<                         <!-- Huisserie -->
+<                         <rect x="40" y="20" width="160" height="265" fill="none" stroke="rgba(197,157,95,0.9)" stroke-width="2.5"/>
+<                         <rect x="45" y="25" width="150" height="255" fill="none" stroke="rgba(197,157,95,0.2)" stroke-width="0.75"/>
+<                         <!-- Vantail -->
+<                         <rect x="50" y="30" width="140" height="245" fill="url(#leaf-ps)" stroke="rgba(100,160,220,0.6)" stroke-width="1.25"/>
+<                         <!-- Label ame -->
+<                         <text x="120" y="148" text-anchor="middle" fill="rgba(100,160,220,0.13)" font-size="9" font-family="Inter,sans-serif" letter-spacing="2" font-weight="600">AME MULTICOUCHE</text>
+<                         <text x="120" y="161" text-anchor="middle" fill="rgba(100,160,220,0.13)" font-size="8" font-family="Inter,sans-serif" letter-spacing="1">HAUTE DENSITE</text>
+<                         <!-- Joint lateral (seal) -->
+<                         <line x1="50" y1="30" x2="50" y2="275" stroke="rgba(100,220,220,0.55)" stroke-width="3"/>
+<                         <!-- Seuil bas -->
+<                         <rect x="46" y="274" width="148" height="6" fill="rgba(197,157,95,0.4)" stroke="rgba(197,157,95,0.55)" stroke-width="0.5"/>
+<                         <!-- Poignee -->
+<                         <rect x="157" y="138" width="8" height="32" rx="4" fill="rgba(197,157,95,0.92)"/>
+<                         <circle cx="161" cy="138" r="3.5" fill="rgba(197,157,95,0.92)"/>
+<                         <circle cx="161" cy="170" r="3.5" fill="rgba(197,157,95,0.92)"/>
+<                         <!-- Paumelles -->
+<                         <rect x="46" y="53" width="8" height="20" rx="2" fill="rgba(197,157,95,0.65)"/>
+<                         <rect x="46" y="235" width="8" height="20" rx="2" fill="rgba(197,157,95,0.65)"/>
+<                     </svg>
+<                 </div>
+<                 <p class="blueprint-label">Vue de face &mdash; Sch&eacute;ma technique (non contractuel)</p>
+< 
+<                 <div class="quick-stats">
+<                     <div class="quick-stat">
+<                         <span class="quick-stat-value">42 dB</span>
+<                         <span class="quick-stat-label">Isolation Rw</span>
+<                     </div>
+<                     <div class="quick-stat">
+<                         <span class="quick-stat-value">2 040</span>
+<                         <span class="quick-stat-label">Hauteur (mm)</span>
+<                     </div>
+<                     <div class="quick-stat">
+<                         <span class="quick-stat-value">1 186 &#8364;</span>
+<                         <span class="quick-stat-label">A partir de HT</span>
+<                     </div>
+<                 </div>
+< 
+<                 <a href="devis.html?modele=ISO-PS%20Plus" class="btn-primary" style="width:100%;text-align:center;display:block;margin-top:0.75rem;">Demander un Devis Gratuit</a>
+<             </div>
+< 
+<             <!-- Colonne droite : infos + onglets -->
+<             <div class="door-info">
+<                 <div class="product-info-header">
+<                     <span class="product-category-label">Porte Acoustique Simple</span>
+<                     <span class="product-db-badge">42 dB Rw</span>
+<                 </div>
+<                 <h2 class="display-title">ISO-PS Plus</h2>
+<                 <p class="product-description">
+<                     Notre mod&egrave;le de r&eacute;f&eacute;rence en configuration simple vantail plein. Avec ses 42 dB d&rsquo;isolation acoustique certifi&eacute;e, l&rsquo;ISO-PS Plus est la solution id&eacute;ale pour les studios d&rsquo;enregistrement, les salles de r&eacute;union confidentielles, les cabinets m&eacute;dicaux et tout espace exigeant une parfaite confidentialit&eacute; sonore. &Acirc;me bois massif multicouche haute densit&eacute;, joints p&eacute;rim&eacute;triques 3 voies et seuil automatique escamotable inclus.
+<                 </p>
+< 
+<                 <div class="feature-highlights">
+<                     <div class="feature-highlight-item">
+<                         <div class="fh-icon">&#127760;</div>
+<                         <div class="fh-text">
+<                             <strong>42 dB d&rsquo;isolation certifi&eacute;e</strong>
+<                             <span>Mesur&eacute; en laboratoire selon EN ISO 717-1</span>
+<                         </div>
+<                     </div>
+<                     <div class="feature-highlight-item">
+<                         <div class="fh-icon">&#128203;</div>
+<                         <div class="fh-text">
+<                             <strong>Seuil automatique escamotable</strong>
+<                             <span>Aucun obstacle au sol &mdash; conforme accessibilit&eacute; PMR</span>
+<                         </div>
+<                     </div>
+<                     <div class="feature-highlight-item">
+<                         <div class="fh-icon">&#127775;</div>
+<                         <div class="fh-text">
+<                             <strong>Personnalisation compl&egrave;te</strong>
+<                             <span>Finition, dimension, quincaillerie sur mesure</span>
+<                         </div>
+<                     </div>
+<                 </div>
+< 
+<                 <!-- Onglets -->
+<                 <div class="tabs-nav">
+<                     <button class="tab-btn active" data-tab="tab-carac">Caract&eacute;ristiques</button>
+<                     <button class="tab-btn" data-tab="tab-tarifs">Tarifs</button>
+<                     <button class="tab-btn" data-tab="tab-install">Installation</button>
+<                 </div>
+< 
+<                 <!-- Onglet : Caracteristiques -->
+<                 <div class="tab-panel active" id="tab-carac">
+<                     <table class="specs-detail">
+<                         <tbody>
+<                             <tr class="specs-section-head"><td colspan="2">Composition</td></tr>
+<                             <tr><td>R&eacute;f&eacute;rence</td><td>ISO-PS-42</td></tr>
+<                             <tr><td>&Acirc;me</td><td>Bois massif multicouche haute densit&eacute;</td></tr>
+<                             <tr><td>Huisserie</td><td>Acier ou bois massif au choix</td></tr>
+<                             <tr><td>Seuil</td><td>Automatique escamotable inclus</td></tr>
+<                             <tr><td>Joints</td><td>P&eacute;rim&eacute;triques compressibles 3 voies</td></tr>
+< 
+<                             <tr class="specs-section-head"><td colspan="2">Dimensions standards</td></tr>
+<                             <tr><td>Hauteur (H)</td><td>2 040 mm</td></tr>
+<                             <tr><td>Largeurs disponibles</td><td>630 / 730 / 830 / 930 mm</td></tr>
+<                             <tr><td>Epaisseur vantail</td><td>68 mm</td></tr>
+<                             <tr><td>Sur mesure</td><td>Disponible sur devis</td></tr>
+< 
+<                             <tr class="specs-section-head"><td colspan="2">Performance acoustique</td></tr>
+<                             <tr><td>Rw (isolation)</td><td>42 dB</td></tr>
+<                             <tr><td>Spectre C</td><td>&minus;1 dB</td></tr>
+<                             <tr><td>Spectre Ctr</td><td>&minus;3 dB</td></tr>
+<                             <tr><td>Norme de r&eacute;f&eacute;rence</td><td>EN ISO 717-1</td></tr>
+<                             <tr><td>Classement feu</td><td>EI30 en option</td></tr>
+< 
+<                             <tr class="specs-section-head"><td colspan="2">Manutention</td></tr>
+<                             <tr><td>Poids</td><td>75 &agrave; 110 kg selon largeur</td></tr>
+<                             <tr><td>Sens d&rsquo;ouverture</td><td>Droite ou gauche au choix</td></tr>
+<                         </tbody>
+<                     </table>
+<                     <div class="warning-box">
+<                         <strong>Note technique</strong>
+<                         Les performances acoustiques sont mesur&eacute;es en conditions de laboratoire conform&eacute;ment &agrave; la norme EN ISO 717-1. Les valeurs in situ peuvent varier de &plusmn;2 dB selon la qualit&eacute; de l&rsquo;installation et la structure des parois adjacentes.
+<                     </div>
+<                 </div>
+< 
+<                 <!-- Onglet : Tarifs -->
+<                 <div class="tab-panel" id="tab-tarifs">
+<                     <table class="tarif-tab-table">
+<                         <thead>
+<                             <tr><th>Dimension (L &times; H)</th><th>Prix HT</th></tr>
+<                         </thead>
+<                         <tbody>
+<                             <tr><td>630 &times; 2 040 mm</td><td>1 186 &#8364;</td></tr>
+<                             <tr><td>730 &times; 2 040 mm</td><td>1 312 &#8364;</td></tr>
+<                             <tr><td>830 &times; 2 040 mm</td><td>1 405 &#8364;</td></tr>
+<                             <tr><td>930 &times; 2 040 mm</td><td>1 492 &#8364;</td></tr>
+<                         </tbody>
+<                     </table>
+<                     <div class="info-box">
+<                         Dimension hors standard&nbsp;? <a href="devis.html">Demandez un devis sur mesure</a> &mdash; nous r&eacute;alisons toutes dimensions jusqu&rsquo;&agrave; 1&nbsp;200 &times; 2&nbsp;400 mm.
+<                     </div>
+<                     <table class="tarif-tab-table">
+<                         <thead>
+<                             <tr><th>Option</th><th>Prix HT</th></tr>
+<                         </thead>
+<                         <tbody>
+<                             <tr><td>Finition cuir 1 c&ocirc;t&eacute;</td><td>398 &#8364;</td></tr>
+<                             <tr><td>Finition tissu 1 c&ocirc;t&eacute;</td><td>312 &#8364;</td></tr>
+<                             <tr><td>Peinture &eacute;poxy 2 c&ocirc;t&eacute;s (RAL)</td><td>425 &#8364;</td></tr>
+<                             <tr><td>Serrure 3 points</td><td>389 &#8364;</td></tr>
+<                             <tr><td>Porte blind&eacute;e</td><td>421 &#8364;</td></tr>
+<                             <tr><td>Tige carr&eacute;</td><td>13 &#8364;</td></tr>
+<                             <tr><td>Cl&eacute; cylindre 30x40</td><td>32 &#8364;</td></tr>
+<                         </tbody>
+<                     </table>
+<                     <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+<                         <a href="devis.html?modele=ISO-PS%20Plus" class="btn-primary">Demander un Devis</a>
+<                         <a href="tarifs.html#portes-simples" class="btn-secondary">Voir tous les Tarifs</a>
+<                     </div>
+<                 </div>
+< 
+<                 <!-- Onglet : Installation -->
+<                 <div class="tab-panel" id="tab-install">
+<                     <div class="install-steps">
+<                         <div class="install-step">
+<                             <div class="install-step-num">1</div>
+<                             <div class="install-step-content">
+<                                 <strong>Pr&eacute;paration de l&rsquo;ouverture</strong>
+<                                 <p>V&eacute;rification des cotes brutes : hauteur +&nbsp;10 mm, largeur +&nbsp;10 mm minimum. L&rsquo;ouverture doit &ecirc;tre d&rsquo;aplomb et de niveau avant la pose de l&rsquo;huisserie.</p>
+<                             </div>
+<                         </div>
+<                         <div class="install-step">
+<                             <div class="install-step-num">2</div>
+<                             <div class="install-step-content">
+<                                 <strong>Mise en place de l&rsquo;huisserie</strong>
+<                                 <p>Calage, v&eacute;rification de l&rsquo;&eacute;querrage et scellement selon le support (ma&ccedil;onnerie, m&eacute;tal, bois). Bourrage complet des jours avec mousse acoustique haute densit&eacute;.</p>
+<                             </div>
+<                         </div>
+<                         <div class="install-step">
+<                             <div class="install-step-num">3</div>
+<                             <div class="install-step-content">
+<                                 <strong>Accrochage du vantail</strong>
+<                                 <p>Mise en place du vantail sur les paumelles pr&eacute;-r&eacute;gl&eacute;es. R&eacute;glage tridimensionnel (haut/bas, avant/arri&egrave;re, lat&eacute;ral) pour alignement parfait avec les joints p&eacute;rim&eacute;triques.</p>
+<                             </div>
+<                         </div>
+<                         <div class="install-step">
+<                             <div class="install-step-num">4</div>
+<                             <div class="install-step-content">
+<                                 <strong>R&eacute;glage &amp; contr&ocirc;le acoustique</strong>
+<                                 <p>R&eacute;glage de la course du seuil escamotable pour contact parfait avec le sol. Test d&rsquo;&eacute;tancheit&eacute; et v&eacute;rification de la bonne compression des joints sur tout le p&eacute;rim&egrave;tre.</p>
+<                             </div>
+<                         </div>
+<                     </div>
+<                     <div class="warning-box" style="margin-top:1.5rem;">
+<                         <strong>Installation professionnelle recommand&eacute;e</strong>
+<                         Pour garantir les 42 dB annonc&eacute;s, la pose doit &ecirc;tre r&eacute;alis&eacute;e par un menuisier qualifi&eacute;. Contactez-nous pour &ecirc;tre mis en relation avec nos installateurs partenaires agr&eacute;&eacute;s.
+<                     </div>
+<                 </div>
+< 
+<             </div><!-- /.door-info -->
+<         </div><!-- /.product-detail-main -->
+<     </section>
+< 
+<     <!-- Trust strip -->
+<     <div class="trust-strip">
+<         <div class="trust-strip-inner">
+<             <div class="trust-item"><span class="trust-icon">&#10003;</span><span>Norme EN ISO 717-1</span></div>
+<             <div class="trust-item"><span class="trust-icon">&#10003;</span><span>Fabrication fran&ccedil;aise</span></div>
+<             <div class="trust-item"><span class="trust-icon">&#10003;</span><span>Garantie 10 ans structure</span></div>
+<             <div class="trust-item"><span class="trust-icon">&#10003;</span><span>Installateurs partenaires</span></div>
+<             <div class="trust-item"><span class="trust-icon">&#10003;</span><span>Devis sous 24h</span></div>
+<         </div>
+<     </div>
+< 
+<     <!-- Finitions -->
+<     <section class="finishes-section">
+<         <div class="finishes-container">
+<             <div class="section-header fade-in">
+<                 <div class="section-subtitle">Esth&eacute;tique</div>
+<                 <h2 class="section-title display-title">Finitions Disponibles</h2>
+<                 <p class="section-description">Personnalisez votre porte dans une palette compl&egrave;te de finitions pour une int&eacute;gration parfaite &agrave; votre espace.</p>
+<             </div>
+<             <div class="finishes-grid fade-in">
+< 
+<                 <div class="finish-card">
+<                     <div class="finish-card-header">
+<                         <h4>Laqu&eacute; RAL</h4>
+<                         <p>Peinture &eacute;poxy haute r&eacute;sistance, mate ou brillante</p>
+<                     </div>
+<                     <div class="finish-card-body">
+<                         <div class="swatches-row">
+<                             <div class="swatch" style="background:#f4f8f4;" data-name="Blanc pur RAL 9016"></div>
+<                             <div class="swatch" style="background:#f8f8f0;" data-name="Blanc signal RAL 9003"></div>
+<                             <div class="swatch" style="background:#d0cfc8;" data-name="Gris clair RAL 7035"></div>
+<                             <div class="swatch" style="background:#7a7f7b;" data-name="Gris ciment RAL 7023"></div>
+<                             <div class="swatch" style="background:#3d444b;" data-name="Gris anthracite RAL 7016"></div>
+<                             <div class="swatch" style="background:#1c1b1a;" data-name="Noir RAL 9005"></div>
+<                             <div class="swatch" style="background:#e8e0d0;" data-name="Beige RAL 1013"></div>
+<                             <div class="swatch" style="background:#c9b383;" data-name="Sable RAL 1001"></div>
+<                             <div class="swatch" style="background:#cc0605;" data-name="Rouge vif RAL 3020"></div>
+<                             <div class="swatch" style="background:#6e2028;" data-name="Bordeaux RAL 3004"></div>
+<                             <div class="swatch" style="background:#00387c;" data-name="Bleu gentiane RAL 5010"></div>
+<                             <div class="swatch" style="background:#5d7a3e;" data-name="Vert fougere RAL 6025"></div>
+<                             <div class="swatch" style="background:#442b1b;" data-name="Brun chocolat RAL 8017"></div>
+<                         </div>
+<                         <p class="finish-card-note">+ Toutes teintes RAL disponibles sur commande</p>
+<                     </div>
+<                 </div>
+< 
+<                 <div class="finish-card">
+<                     <div class="finish-card-header">
+<                         <h4>Placage Bois Naturel</h4>
+<                         <p>Verni&eacute; ou huil&eacute;, finition mate ou satin&eacute;e</p>
+<                     </div>
+<                     <div class="finish-card-body">
+<                         <div class="swatches-row">
+<                             <div class="swatch" style="background:#c8a45c;" data-name="Ch&ecirc;ne naturel"></div>
+<                             <div class="swatch" style="background:#e0cfa8;" data-name="Ch&ecirc;ne blanchi"></div>
+<                             <div class="swatch" style="background:#7c5530;" data-name="Ch&ecirc;ne fonc&eacute;"></div>
+<                             <div class="swatch" style="background:#6b3f20;" data-name="Noyer am&eacute;ricain"></div>
+<                             <div class="swatch" style="background:#3a1a0a;" data-name="Wenge"></div>
+<                             <div class="swatch" style="background:#c8a878;" data-name="H&ecirc;tre"></div>
+<                             <div class="swatch" style="background:#a06040;" data-name="Merisier"></div>
+<                         </div>
+<                         <p class="finish-card-note">Autres essences et teintes sur demande</p>
+<                     </div>
+<                 </div>
+< 
+<                 <div class="finish-card">
+<                     <div class="finish-card-header">
+<                         <h4>Cuir &amp; Tissu</h4>
+<                         <p>Rev&ecirc;tement tendu 1 ou 2 c&ocirc;t&eacute;s</p>
+<                     </div>
+<                     <div class="finish-card-body">
+<                         <div class="swatches-row">
+<                             <div class="swatch" style="background:#1a1a1a;" data-name="Cuir noir"></div>
+<                             <div class="swatch" style="background:#6b3c1e;" data-name="Cuir marron"></div>
+<                             <div class="swatch" style="background:#7c1020;" data-name="Cuir rouge"></div>
+<                             <div class="swatch" style="background:#c0c0c0;" data-name="Tissu gris clair"></div>
+<                             <div class="swatch" style="background:#606060;" data-name="Tissu gris anthracite"></div>
+<                             <div class="swatch" style="background:#800020;" data-name="Tissu bordeaux"></div>
+<                             <div class="swatch" style="background:#1a2a4a;" data-name="Tissu bleu marine"></div>
+<                         </div>
+<                         <p class="finish-card-note">Echantillons gratuits envoy&eacute;s sur demande</p>
+<                     </div>
+<                 </div>
+< 
+<             </div>
+<         </div>
+<     </section>
+< 
+<     <!-- Options & Accessoires -->
+<     <section class="options-section-v2">
+<         <div class="options-container">
+<             <div class="section-header fade-in">
+<                 <div class="section-subtitle">Personnalisation</div>
+<                 <h2 class="section-title display-title">Options &amp; Accessoires</h2>
+<                 <p class="section-description">Compl&eacute;tez votre porte acoustique avec nos options certifi&eacute;es pour r&eacute;pondre &agrave; tous vos besoins sp&eacute;cifiques.</p>
+<             </div>
+<             <div class="options-grid-v2 fade-in">
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Serrure 3 points</div>
+<                     <div class="option-card-price">389 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Finition cuir 1 c&ocirc;t&eacute;</div>
+<                     <div class="option-card-price">398 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Finition tissu 1 c&ocirc;t&eacute;</div>
+<                     <div class="option-card-price">312 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Peinture &eacute;poxy 2 c&ocirc;t&eacute;s (RAL)</div>
+<                     <div class="option-card-price">425 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Porte blind&eacute;e</div>
+<                     <div class="option-card-price">421 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Classement feu EI30</div>
+<                     <div class="option-card-price">Sur devis</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Poign&eacute;e inox bross&eacute;</div>
+<                     <div class="option-card-price">Sur devis</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Ferme-porte automatique</div>
+<                     <div class="option-card-price">Sur devis</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Tige carr&eacute;</div>
+<                     <div class="option-card-price">13 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Cl&eacute; cylindre 30x40</div>
+<                     <div class="option-card-price">32 &#8364;</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Dimensions sur mesure</div>
+<                     <div class="option-card-price">Sur devis</div>
+<                 </div>
+<                 <div class="option-card">
+<                     <div class="option-card-name"><div class="option-card-check">&#10003;</div>Contr&ocirc;le acc&egrave;s (badge)</div>
+<                     <div class="option-card-price">Sur devis</div>
+<                 </div>
+<             </div>
+<         </div>
+<     </section>
+< 
+<     <!-- CTA -->
+<     <section class="cta-banner">
+<         <h2 class="display-title">Pr&ecirc;t &agrave; Commander ?</h2>
+<         <p>Obtenez votre devis personnalis&eacute; en moins de 24h. Livraison et installation disponibles partout en France.</p>
+<         <div class="btn-group">
+<             <a href="devis.html?modele=ISO-PS%20Plus" class="btn-primary btn-lg">Devis Gratuit</a>
+<             <a href="tarifs.html" class="btn-white btn-lg">Voir les Tarifs</a>
+<         </div>
+<     </section>
+< 
+<     <!-- Footer -->
+<     <footer>
+<         <div class="footer-content">
+<             <div class="footer-brand">
+<                 <h3>ACOUSTICA<span style="color:var(--accent)">.</span></h3>
+<                 <p>Leader fran&ccedil;ais des portes acoustiques professionnelles. Excellence technique, innovation et service client d&rsquo;exception depuis plus de 20 ans.</p>
+<             </div>
+<             <div class="footer-links">
+<                 <h4>Navigation</h4>
+<                 <ul>
+<                     <li><a href="index.html">Accueil</a></li>
+<                     <li><a href="produits.html">Produits</a></li>
+<                     <li><a href="tarifs.html">Tarifs</a></li>
+<                     <li><a href="a-propos.html">A propos</a></li>
+<                     <li><a href="contact.html">Contact</a></li>
+<                 </ul>
+<             </div>
+<             <div class="footer-links">
+<                 <h4>Produits</h4>
+<                 <ul>
+<                     <li><a href="tarifs.html#portes-simples">Portes Simples</a></li>
+<                     <li><a href="tarifs.html#doubles-portes">Doubles Portes</a></li>
+<                     <li><a href="tarifs.html#options">Options</a></li>
+<                     <li><a href="devis.html">Devis en ligne</a></li>
+<                 </ul>
+<             </div>
+<             <div class="footer-links">
+<                 <h4>Contact</h4>
+<                 <ul>
+<                     <li><a href="tel:+33123456789">+33 (0)1 23 45 67 89</a></li>
+<                     <li><a href="mailto:contact@acoustica.fr">contact@acoustica.fr</a></li>
+<                     <li><a href="contact.html">Formulaire de contact</a></li>
+<                     <li><a href="devis.html">Demande de devis</a></li>
+<                 </ul>
+<             </div>
+<         </div>
+<         <div class="footer-bottom">
+<             <p>&copy; 2026 Acoustica. Tous droits r&eacute;serv&eacute;s.</p>
+<             <p><a href="#">Mentions l&eacute;gales</a> | <a href="#">Politique de confidentialit&eacute;</a></p>
+<         </div>
+<     </footer>
+< 
+<     <script src="js/main.js"></script>
+< </body>
+< </html>

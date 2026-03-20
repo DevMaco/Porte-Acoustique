@@ -5,37 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Porte Acoustique | Portes Acoustiques Professionnelles</title>
     <meta name="description" content="Leader français des portes acoustiques professionnelles. Isolation phonique jusqu'à 52 dB. Devis gratuit sous 24h.">
+    <meta name="theme-color" content="#d4650a">
+    <meta property="og:title" content="Porte Acoustique — Portes Acoustiques Professionnelles">
+    <meta property="og:description" content="Isolation phonique de 35 à 52 dB. Fabrication française, garantie 10 ans. Devis gratuit sous 24h.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://porteacoustique.fr">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Barre du haut -->
-<div class="top-bar">
-    <div class="top-bar-inner">
-        <div class="top-bar-left">
-            <span class="top-bar-item">&#9742; <a href="tel:+33123456789">+33 (0)1 23 45 67 89</a></span>
-            <span class="top-bar-item">&#9993; <a href="mailto:contact@porteacoustique.fr">contact@porteacoustique.fr</a></span>
-        </div>
-        <span class="top-bar-item">Lun&ndash;Ven : 9h00 &mdash; 18h00</span>
-    </div>
-</div>
-
 <!-- Navigation -->
 <nav class="navbar">
     <div class="nav-inner">
-        <a href="index.html" class="logo">PORTE ACOUSTIQUE<span class="logo-dot">.</span></a>
+        <a href="index.html" class="logo">PORTE ACOUSTIQUE<span style="color:var(--orange)">.</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html" class="active">Accueil</a></li>
             <li><a href="produits.html">Produits</a></li>
             <li><a href="tarifs.html">Tarifs</a></li>
             <li><a href="a-propos.html">A propos</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-devis"><a href="devis.html">Devis gratuit &rarr;</a></li>
         </ul>
         <a href="devis.html" class="btn btn-nav-devis">Demander un Devis</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -44,18 +39,77 @@
 <!-- Hero -->
 <section class="home-hero">
     <div class="home-hero-inner">
-        <h1>Portes Acoustiques<br>Professionnelles</h1>
-        <p>Isolation phonique de 35 à 52 dB pour vos studios, bureaux, cabinets médicaux et résidences. Fabrication française, garantie 10 ans.</p>
-        <div class="hero-pills">
-            <span class="hero-pill">Fabrication française</span>
-            <span class="hero-pill">Garantie 10 ans</span>
-            <span class="hero-pill">Devis sous 24h</span>
-            <span class="hero-pill">Pose disponible</span>
+
+        <!-- LEFT: texte + CTA -->
+        <div class="hero-text">
+            <div class="section-label" style="margin-bottom:0.75rem;">Isolation phonique 35 – 52 dB</div>
+            <h1>La Porte Acoustique<br><span>Sur Mesure</span></h1>
+            <p class="hero-subtitle">Portes acoustiques haute performance pour studio d'enregistrement, bureau, appartement ou salle de conf&eacute;rence. Fabrication fran&ccedil;aise, garantie 10 ans.</p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem;">
+                <a href="devis.html" class="btn btn-orange btn-lg">Devis gratuit sous 24h</a>
+                <a href="produits.html" class="btn btn-primary btn-lg">Voir les mod&egrave;les</a>
+            </div>
+            <div class="hero-phone" style="margin-top:1.5rem;">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                <span>Appelez-nous au <strong>01 84 60 04 02</strong></span>
+            </div>
+            <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;">
+                <div style="font-size:0.8125rem;color:var(--text-light);display:flex;align-items:center;gap:0.4rem;">
+                    <span style="color:var(--orange);font-weight:700;">&#10003;</span> Fabrication fran&ccedil;aise
+                </div>
+                <div style="font-size:0.8125rem;color:var(--text-light);display:flex;align-items:center;gap:0.4rem;">
+                    <span style="color:var(--orange);font-weight:700;">&#10003;</span> Garantie 10 ans
+                </div>
+                <div style="font-size:0.8125rem;color:var(--text-light);display:flex;align-items:center;gap:0.4rem;">
+                    <span style="color:var(--orange);font-weight:700;">&#10003;</span> Sur mesure
+                </div>
+            </div>
         </div>
-        <div class="btn-group">
-            <a href="tarifs.html" class="btn btn-accent btn-lg">Voir les tarifs</a>
-            <a href="devis.html" class="btn btn-white btn-lg">Demander un devis gratuit</a>
+
+        <!-- RIGHT: illustration SVG porte -->
+        <div class="hero-door-wrap" style="align-items:center;justify-content:center;">
+            <svg viewBox="0 0 340 480" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px;height:auto;display:block;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.13));">
+                <!-- Fond carte -->
+                <rect width="340" height="480" rx="6" fill="#f5f0e8"/>
+                <!-- Ombre portée porte -->
+                <rect x="52" y="22" width="236" height="436" rx="4" fill="rgba(0,0,0,0.07)"/>
+                <!-- Cadre dormant -->
+                <rect x="46" y="18" width="236" height="436" rx="3" fill="#c8bfb0" stroke="#b8afa0" stroke-width="1"/>
+                <!-- Ouverture / vantail -->
+                <rect x="62" y="32" width="204" height="408" fill="#ffffff" stroke="#e8e2d8" stroke-width="1" rx="2"/>
+                <!-- Biseaux du vantail -->
+                <rect x="65" y="35" width="198" height="402" fill="none" stroke="#f0ebe3" stroke-width="4" rx="1"/>
+                <!-- Panneau déco haut -->
+                <rect x="80" y="52" width="168" height="148" rx="2" fill="#faf8f4" stroke="#ddd6cc" stroke-width="1.5"/>
+                <rect x="85" y="57" width="158" height="138" rx="1" fill="none" stroke="#e8e2d8" stroke-width="0.8"/>
+                <!-- Panneau déco bas -->
+                <rect x="80" y="216" width="168" height="196" rx="2" fill="#faf8f4" stroke="#ddd6cc" stroke-width="1.5"/>
+                <rect x="85" y="221" width="158" height="186" rx="1" fill="none" stroke="#e8e2d8" stroke-width="0.8"/>
+                <!-- Paumelles (3) -->
+                <rect x="57" y="72" width="11" height="26" rx="1.5" fill="#c0b9ae" stroke="#b0a9a0" stroke-width="0.5"/>
+                <rect x="59" y="76" width="6" height="18" rx="1" fill="#cec7bc"/>
+                <rect x="57" y="225" width="11" height="26" rx="1.5" fill="#c0b9ae" stroke="#b0a9a0" stroke-width="0.5"/>
+                <rect x="59" y="229" width="6" height="18" rx="1" fill="#cec7bc"/>
+                <rect x="57" y="358" width="11" height="26" rx="1.5" fill="#c0b9ae" stroke="#b0a9a0" stroke-width="0.5"/>
+                <rect x="59" y="362" width="6" height="18" rx="1" fill="#cec7bc"/>
+                <!-- Poignée / rose -->
+                <rect x="239" y="218" width="12" height="40" rx="2" fill="#c4bdb4" stroke="#b4ada4" stroke-width="0.5"/>
+                <circle cx="245" cy="248" r="3.5" fill="#b0a9a0" stroke="#a09990" stroke-width="0.5"/>
+                <!-- Levier -->
+                <path d="M244 228 Q258 228 261 231 Q264 234 261 237 Q258 240 244 238 Z" fill="#cac3ba" stroke="#bab3aa" stroke-width="0.5"/>
+                <!-- Badge dB (orange) -->
+                <rect x="218" y="46" width="74" height="52" rx="4" fill="#d4650a"/>
+                <text x="255" y="76" text-anchor="middle" font-size="26" font-weight="900" fill="white" font-family="Inter,Arial,sans-serif">42</text>
+                <text x="255" y="88" text-anchor="middle" font-size="10" font-weight="700" fill="rgba(255,255,255,0.85)" font-family="Inter,Arial,sans-serif">dB</text>
+                <!-- Joint acoustique bas (orange) -->
+                <rect x="62" y="435" width="204" height="5" rx="1" fill="#d4650a" opacity="0.85"/>
+                <!-- Label joint -->
+                <line x1="46" y1="437" x2="20" y2="390" stroke="#d4650a" stroke-width="0.8" opacity="0.5"/>
+                <text x="18" y="386" text-anchor="end" font-size="8" fill="#d4650a" font-family="Inter,Arial,sans-serif" font-weight="600">Joint acoustique</text>
+                <text x="18" y="396" text-anchor="end" font-size="8" fill="#d4650a" font-family="Inter,Arial,sans-serif">p&eacute;riph&eacute;rique</text>
+            </svg>
         </div>
+
     </div>
 </section>
 
@@ -67,89 +121,90 @@
     <div class="stat-item"><div class="stat-num">8</div><div class="stat-lbl">Modèles disponibles</div></div>
 </div>
 
-<!-- Produits -->
-<section class="section">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-label">Notre gamme</div>
-            <h2 class="section-title">Portes Simples &amp; Doubles Portes</h2>
-            <p class="section-desc">Quatre modèles de portes simples et quatre modèles de doubles portes pour répondre à tous les besoins d'isolation phonique.</p>
+<!-- CTA Strip -->
+<div class="cta-strip">
+    <h2>Demandez votre devis en 24h</h2>
+    <p style="color:var(--text-light);font-size:0.9375rem;">Notre équipe d'experts vous répond rapidement avec un devis personnalisé et sans engagement.</p>
+    <a href="devis.html" class="btn btn-orange btn-lg" style="margin-top:1.25rem;">Demande de devis gratuit</a>
+    <div class="cta-features">
+        <div class="cta-feature">Fabrication française</div>
+        <div class="cta-feature">Garantie 10 ans</div>
+        <div class="cta-feature">Devis sous 24h</div>
+        <div class="cta-feature">Pose disponible</div>
+    </div>
+</div>
+
+<!-- Applications -->
+<div class="applications-section">
+    <div style="max-width:1200px;margin:0 auto;">
+        <div class="section-label" style="text-align:center;margin-bottom:0.5rem;">Domaines d'application</div>
+        <h2>Une solution pour chaque usage</h2>
+        <div class="apps-grid">
+            <div class="app-card">
+                <img src="img/Porte_acoustique studioenregistrement.png" alt="Studio Musique">
+                <div class="app-card-body">
+                    <div class="app-card-title">Studio Musique</div>
+                    <div class="app-card-desc">Isolation maximale 42–52 dB</div>
+                </div>
+            </div>
+            <div class="app-card">
+                <img src="img/Porte_acoustique moderne_dans_bureau.png" alt="Bureaux">
+                <div class="app-card-body">
+                    <div class="app-card-title">Bureaux</div>
+                    <div class="app-card-desc">Confidentialité professionnelle</div>
+                </div>
+            </div>
+            <div class="app-card">
+                <img src="img/Porte_acoustique_Homecinema.png" alt="Home Cinéma">
+                <div class="app-card-body">
+                    <div class="app-card-title">Home Cinéma</div>
+                    <div class="app-card-desc">Expérience sonore immersive</div>
+                </div>
+            </div>
+            <div class="app-card">
+                <img src="img/Port_acoustique moderne_appart.png" alt="Appartement">
+                <div class="app-card-body">
+                    <div class="app-card-title">Appartement</div>
+                    <div class="app-card-desc">Confort résidentiel quotidien</div>
+                </div>
+            </div>
         </div>
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-card-img">
-                    <img src="images_agenererplustard/IMG_6274-e1475179363732.jpg" alt="ISO-PS Plus">
-                    <span class="product-badge">Pleine</span>
-                </div>
-                <div class="product-card-body">
-                    <div class="product-name">ISO-PS Plus</div>
-                    <div class="product-type">Porte simple pleine</div>
-                    <div class="product-from">À partir de 1 186 &euro; HT</div>
-                    <div class="product-card-actions">
-                        <a href="produit-iso-ps-plus.html" class="btn btn-secondary btn-sm">Voir</a>
-                        <a href="tarifs.html#portes-simples" class="btn btn-primary btn-sm">Tarifs</a>
-                    </div>
-                </div>
+    </div>
+</div>
+
+<!-- Modèles dB -->
+<div class="models-section">
+    <div style="max-width:1200px;margin:0 auto;">
+        <div class="section-label" style="text-align:center;margin-bottom:0.5rem;">Nos modèles</div>
+        <h2 style="text-align:center;font-size:1.75rem;font-weight:800;margin-bottom:1.75rem;text-transform:uppercase;">Performances certifiées</h2>
+        <div class="models-grid">
+            <div class="model-card">
+                <div class="model-ref">ISO-DPO Plus</div>
+                <div class="model-db">35 <span>dB</span></div>
+                <p style="font-size:0.875rem;color:var(--text-light);">Double porte avec hublot. Idéale pour les bureaux et résidences nécessitant une isolation standard.</p>
+                <a href="produit-iso-dpo-plus.html" class="btn btn-outline-orange btn-sm">Voir le produit</a>
             </div>
-            <div class="product-card">
-                <div class="product-card-img">
-                    <img src="images_agenererplustard/IMG_6256-scaled.jpg" alt="ISO-PV Plus">
-                    <span class="product-badge">Vitrée</span>
-                </div>
-                <div class="product-card-body">
-                    <div class="product-name">ISO-PV Plus</div>
-                    <div class="product-type">Porte simple vitrée</div>
-                    <div class="product-from">À partir de 1 576 &euro; HT</div>
-                    <div class="product-card-actions">
-                        <a href="produit-iso-pv-plus.html" class="btn btn-secondary btn-sm">Voir</a>
-                        <a href="tarifs.html#portes-simples" class="btn btn-primary btn-sm">Tarifs</a>
-                    </div>
-                </div>
+            <div class="model-card">
+                <div class="model-ref">ISO-DPV Plus</div>
+                <div class="model-db">42 <span>dB</span></div>
+                <p style="font-size:0.875rem;color:var(--text-light);">Double porte vitrée. Performance acoustique élevée avec apport de lumière naturelle.</p>
+                <a href="produit-iso-dpv-plus.html" class="btn btn-outline-orange btn-sm">Voir le produit</a>
             </div>
-            <div class="product-card">
-                <div class="product-card-img">
-                    <svg width="80" height="130" viewBox="0 0 36 60" style="margin:auto;display:block;">
-                        <rect x="1" y="1" width="34" height="58" rx="1" fill="#d4700a" stroke="#a35508" stroke-width="1"/>
-                        <rect x="5" y="8" width="11" height="28" rx="1" fill="#b8d4e8" stroke="#a35508" stroke-width="0.5"/>
-                        <rect x="20" y="8" width="11" height="28" rx="1" fill="#b8d4e8" stroke="#a35508" stroke-width="0.5"/>
-                        <circle cx="28" cy="46" r="2.5" fill="#8b4508"/>
-                    </svg>
-                    <span class="product-badge">Dbl. vitrage</span>
-                </div>
-                <div class="product-card-body">
-                    <div class="product-name">ISO-P2V Plus</div>
-                    <div class="product-type">Porte simple double vitrage</div>
-                    <div class="product-from">À partir de 1 598 &euro; HT</div>
-                    <div class="product-card-actions">
-                        <a href="produit-iso-p2v-plus.html" class="btn btn-secondary btn-sm">Voir</a>
-                        <a href="tarifs.html#portes-simples" class="btn btn-primary btn-sm">Tarifs</a>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-card-img">
-                    <img src="images_agenererplustard/IMG_6250-scaled.jpg" alt="ISO-PO Plus">
-                    <span class="product-badge">Hublot</span>
-                </div>
-                <div class="product-card-body">
-                    <div class="product-name">ISO-PO Plus</div>
-                    <div class="product-type">Porte simple avec hublot</div>
-                    <div class="product-from">À partir de 1 579 &euro; HT</div>
-                    <div class="product-card-actions">
-                        <a href="produit-iso-po-plus.html" class="btn btn-secondary btn-sm">Voir</a>
-                        <a href="tarifs.html#portes-simples" class="btn btn-primary btn-sm">Tarifs</a>
-                    </div>
-                </div>
+            <div class="model-card">
+                <div class="model-ref">ISO-DP2V Plus</div>
+                <div class="model-db">47 <span>dB</span></div>
+                <p style="font-size:0.875rem;color:var(--text-light);">Double porte double vitrage. Isolation maximale pour studios d'enregistrement et salles de conférence.</p>
+                <a href="produit-iso-dp2v-plus.html" class="btn btn-outline-orange btn-sm">Voir le produit</a>
             </div>
         </div>
         <div style="text-align:center;margin-top:1.75rem;">
             <a href="produits.html" class="btn btn-primary">Voir tous les produits</a>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Pourquoi nous -->
-<section class="section bg-light">
+<section class="section bg-warm">
     <div class="container">
         <div class="section-header">
             <div class="section-label">Nos atouts</div>
@@ -221,7 +276,7 @@
 <footer>
     <div class="footer-grid">
         <div class="footer-brand">
-            <h3>PORTE ACOUSTIQUE<span style="color:var(--accent)">.</span></h3>
+            <h3>PORTE ACOUSTIQUE<span style="color:var(--orange)">.</span></h3>
             <p>Leader français des portes acoustiques professionnelles. Excellence technique, innovation et service client d'exception depuis plus de 20 ans.</p>
         </div>
         <div>

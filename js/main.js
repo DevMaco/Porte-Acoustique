@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (toggle) {
         toggle.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
+            var isOpen = navLinks.classList.toggle('active');
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
     }
 
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         navLinks.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {
                 navLinks.classList.remove('active');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
             });
         });
     }
@@ -27,8 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', function (e) {
         if (navLinks && toggle && !navLinks.contains(e.target) && !toggle.contains(e.target)) {
             navLinks.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
         }
     });
+
+    // ---- Navbar shadow au scroll ----
+    var navbar = document.querySelector('.navbar');
+    if (navbar) {
+        window.addEventListener('scroll', function () {
+            navbar.classList.toggle('scrolled', window.scrollY > 10);
+        }, { passive: true });
+    }
 
     // ---- Lien actif dans la nav ----
     var currentPage = window.location.pathname.split('/').pop() || 'index.html';

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de Réalisations | Porte Acoustique</title>
+    <meta name="description" content="Découvrez nos réalisations en photos : installations résidentielles, studios d'enregistrement, bureaux professionnels et chantiers en cours.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ---- Galerie page styles ---- */
+        .gallery-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .filter-btn {
+            padding: 0.45rem 1.1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 999px;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+            font-family: inherit;
+        }
+        .filter-btn:hover { border-color: var(--orange); color: var(--orange); }
+        .filter-btn.active {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: #fff;
+        }
+
+        /* Masonry grid via CSS columns */
+        .gallery-grid {
+            columns: 4;
+            column-gap: 0.75rem;
+        }
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius);
+            cursor: pointer;
+            background: var(--bg-card);
+        }
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.32s ease, filter 0.25s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.04); filter: brightness(0.88); }
+        .gallery-item-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26,26,26,0.55) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 0.875rem;
+        }
+        .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+        .gallery-item-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .gallery-item.hidden { display: none; }
+
+        /* Stats bar */
+        .gallery-stats {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .gallery-stat-item { display: flex; flex-direction: column; }
+        .gallery-stat-num { font-size: 1.75rem; font-weight: 900; color: var(--dark); line-height: 1; }
+        .gallery-stat-lbl { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-top: 0.2rem; }
+        .gallery-stat-num.accent { color: var(--orange); }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,9,8,0.93);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.22s ease;
+        }
+        .lightbox.open { opacity: 1; pointer-events: all; }
+        .lightbox-img-wrap {
+            position: relative;
+            max-width: min(90vw, 1100px);
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-img {
+            max-width: 100%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+            display: block;
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 1.25rem;
+            right: 1.5rem;
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+            z-index: 1001;
+        }
+        .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+        .lightbox-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.12);
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+            z-index: 1001;
+        }
+        .lightbox-arrow:hover { background: rgba(255,255,255,0.26); }
+        .lightbox-prev { left: 1.25rem; }
+        .lightbox-next { right: 1.25rem; }
+        .lightbox-counter {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.55);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+        .lightbox-caption {
+            position: fixed;
+            bottom: 3.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-align: center;
+            max-width: 480px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Responsive */
+        @media (max-width: 960px) { .gallery-grid { columns: 3; } }
+        @media (max-width: 600px) {
+            .gallery-grid { columns: 2; }
+            .lightbox-arrow { width: 40px; height: 40px; font-size: 1.2rem; }
+            .lightbox-prev { left: 0.5rem; }
+            .lightbox-next { right: 0.5rem; }
+        }
+        @media (max-width: 380px) { .gallery-grid { columns: 1; } }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-inner">
+        <a href="index.html" class="logo">PORTE ACOUSTIQUE<span class="logo-dot">.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="produits.html">Produits</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="galerie.html" class="active">Galerie</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="nav-mobile-devis"><a href="devis.html">Devis gratuit &rarr;</a></li>
+        </ul>
+        <a href="devis.html" class="btn btn-nav-devis">Demander un Devis</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<div class="page-hero">
+    <div class="page-hero-inner">
+        <div class="breadcrumb"><a href="index.html">Accueil</a><span class="sep">/</span><span>Galerie</span></div>
+        <h1>Nos Réalisations</h1>
+        <p>Découvrez nos installations en conditions réelles : appartements, studios, bureaux et projets professionnels.</p>
+    </div>
+</div>
+
+<section class="section">
+    <div class="container">
+
+        <!-- Stats -->
+        <div class="gallery-stats">
+            <div class="gallery-stat-item">
+                <span class="gallery-stat-num accent" id="visibleCount">28</span>
+                <span class="gallery-stat-lbl">Photos</span>
+            </div>
+            <div class="gallery-stat-item">
+                <span class="gallery-stat-num">+500</span>
+                <span class="gallery-stat-lbl">Chantiers réalisés</span>
+            </div>
+            <div class="gallery-stat-item">
+                <span class="gallery-stat-num">20+</span>
+                <span class="gallery-stat-lbl">Ans d'expérience</span>
+            </div>
+            <div class="gallery-stat-item">
+                <span class="gallery-stat-num">35–52</span>
+                <span class="gallery-stat-lbl">dB Rw certifiés</span>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="gallery-filters" role="group" aria-label="Filtrer par catégorie">
+            <button class="filter-btn active" data-filter="all">Toutes les photos</button>
+            <button class="filter-btn" data-filter="résidentiel">Résidentiel</button>
+            <button class="filter-btn" data-filter="bureau">Bureau &amp; Pro</button>
+            <button class="filter-btn" data-filter="studio">Studio &amp; Cinéma</button>
+            <button class="filter-btn" data-filter="chantier">Chantier</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Installation résidentielle — porte simple ISO-PS Plus">
+                <img src="img/Galeries/IMG_1452-scaled.jpg" alt="Installation porte acoustique résidentielle" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Porte acoustique en appartement">
+                <img src="img/Galeries/IMG_1777-e1475182908150-scaled.jpg" alt="Porte acoustique appartement" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Installation en espace de bureau professionnel">
+                <img src="img/Galeries/IMG_41221-scaled.jpg" alt="Porte acoustique bureau" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Porte acoustique résidentielle sur mesure">
+                <img src="img/Galeries/IMG_4855-scaled.jpg" alt="Porte acoustique sur mesure" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="chantier" data-caption="Détail de pose — précision d'installation">
+                <img src="img/Galeries/IMG_5255-1-150x150-1.jpg" alt="Détail pose porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Chantier</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="chantier" data-caption="Mise en œuvre sur chantier">
+                <img src="img/Galeries/IMG_5492-150x150-1.jpg" alt="Chantier porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Chantier</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Porte acoustique pour espace professionnel">
+                <img src="img/Galeries/IMG_6210-scaled.jpg" alt="Porte acoustique professionnel" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Pose en maison individuelle">
+                <img src="img/Galeries/P1000243-scaled.jpg" alt="Porte acoustique maison individuelle" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Isolation phonique — accès chambre">
+                <img src="img/Galeries/P1000393-scaled.jpg" alt="Isolation phonique chambre" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Finition bois naturel en intérieur">
+                <img src="img/Galeries/P1000437-scaled.jpg" alt="Finition bois porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Salle de réunion avec porte acoustique">
+                <img src="img/Galeries/P1000454-scaled.jpg" alt="Salle réunion porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="studio" data-caption="Studio d'enregistrement — isolation optimale">
+                <img src="img/Galeries/P1000800-scaled.jpg" alt="Studio enregistrement porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Studio &amp; Cinéma</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="studio" data-caption="Double porte pour studio professionnel">
+                <img src="img/Galeries/P1000803-scaled.jpg" alt="Double porte studio professionnel" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Studio &amp; Cinéma</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="studio" data-caption="Cabine de prise de son — 52 dB Rw">
+                <img src="img/Galeries/P1000835-scaled.jpg" alt="Cabine prise de son 52 dB" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Studio &amp; Cinéma</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="studio" data-caption="Home cinéma avec porte acoustique ISO-P2V Plus">
+                <img src="img/Galeries/P1000844-scaled.jpg" alt="Home cinéma porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Studio &amp; Cinéma</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Open space — cloison acoustique et porte ISO-PS Plus">
+                <img src="img/Galeries/P1000848-scaled.jpg" alt="Open space porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Bureau individuel — confidentialité assurée">
+                <img src="img/Galeries/P1000857-scaled.jpg" alt="Bureau individuel isolation acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Accueil et espace de travail acoustique">
+                <img src="img/Galeries/P1000866-scaled.jpg" alt="Espace travail acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="bureau" data-caption="Porte acoustique double vantail — grande ouverture">
+                <img src="img/Galeries/P1010044-scaled.jpg" alt="Porte acoustique double vantail" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Bureau &amp; Pro</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Couloir résidentiel — finition laquée">
+                <img src="img/Galeries/P1010142-scaled.jpg" alt="Couloir résidentiel porte laquée" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Porte acoustique avec vitrage latéral">
+                <img src="img/Galeries/P1010156-scaled.jpg" alt="Porte acoustique vitrage latéral" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Installation résidentielle soignée — finition premium">
+                <img src="img/Galeries/P1010164-scaled.jpg" alt="Installation résidentielle premium" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="chantier" data-caption="Phase de pose — calage et réglage du bâti">
+                <img src="img/Galeries/P1010283-scaled.jpg" alt="Pose et réglage bâti porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Chantier</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="chantier" data-caption="Finitions de chantier — joint d'étanchéité acoustique">
+                <img src="img/Galeries/P1010379-scaled.jpg" alt="Joint étanchéité acoustique chantier" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Chantier</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="studio" data-caption="Studio home — porte ISO-PO Plus avec hublot">
+                <img src="img/Galeries/P1050761-1-scaled.jpg" alt="Studio home porte hublot" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Studio &amp; Cinéma</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="studio" data-caption="Salle de musique — 48 dB d'isolation certifiée">
+                <img src="img/Galeries/P1060717-scaled.jpg" alt="Salle musique isolation 48 dB" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Studio &amp; Cinéma</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="résidentiel" data-caption="Porte acoustique résidentielle — vue d'ensemble">
+                <img src="img/Galeries/PORFDG.jpg" alt="Porte acoustique résidentielle" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Résidentiel</span></div>
+            </div>
+
+            <div class="gallery-item" data-category="chantier" data-caption="Travaux d'installation — équipe Porte Acoustique">
+                <img src="img/Galeries/travaux5-scaled.jpg" alt="Travaux installation porte acoustique" loading="lazy">
+                <div class="gallery-item-overlay"><span class="gallery-item-label">Chantier</span></div>
+            </div>
+
+        </div><!-- /.gallery-grid -->
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionneuse d'images">
+    <button class="lightbox-close" id="lbClose" aria-label="Fermer">&#x2715;</button>
+    <button class="lightbox-arrow lightbox-prev" id="lbPrev" aria-label="Image précédente">&#8592;</button>
+    <div class="lightbox-img-wrap">
+        <img class="lightbox-img" id="lbImg" src="" alt="">
+    </div>
+    <button class="lightbox-arrow lightbox-next" id="lbNext" aria-label="Image suivante">&#8594;</button>
+    <div class="lightbox-caption" id="lbCaption"></div>
+    <div class="lightbox-counter" id="lbCounter"></div>
+</div>
+
+<section class="cta-banner">
+    <h2>Un Projet d'Isolation Acoustique ?</h2>
+    <p>Nos experts vous accompagnent du choix du produit jusqu'à l'installation finale.</p>
+    <div class="btn-group">
+        <a href="produits.html" class="btn btn-accent btn-lg">Voir les Produits</a>
+        <a href="devis.html" class="btn btn-white btn-lg">Devis Gratuit</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <h3>PORTE ACOUSTIQUE<span style="color:var(--orange)">.</span></h3>
+            <p>Leader français des portes acoustiques professionnelles depuis plus de 20 ans.</p>
+        </div>
+        <div><h4>Navigation</h4><ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="produits.html">Produits</a></li>
+            <li><a href="tarifs.html">Tarifs</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul></div>
+        <div><h4>Produits</h4><ul>
+            <li><a href="tarifs.html#portes-simples">Portes Simples</a></li>
+            <li><a href="tarifs.html#doubles-portes">Doubles Portes</a></li>
+            <li><a href="tarifs.html#options">Options</a></li>
+            <li><a href="devis.html">Devis en ligne</a></li>
+        </ul></div>
+        <div><h4>Contact</h4><ul>
+            <li><a href="tel:+33123456789">+33 (0)1 23 45 67 89</a></li>
+            <li><a href="mailto:contact@porteacoustique.fr">contact@porteacoustique.fr</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li><a href="devis.html">Demande de devis</a></li>
+        </ul></div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Porte Acoustique. Tous droits réservés.</p>
+        <p><a href="#">Mentions légales</a> | <a href="#">Confidentialité</a></p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+    // --- Filter ---
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = Array.from(document.querySelectorAll('.gallery-item'));
+    const countEl = document.getElementById('visibleCount');
+
+    function applyFilter(filter) {
+        let count = 0;
+        items.forEach(item => {
+            const match = filter === 'all' || item.dataset.category === filter;
+            item.classList.toggle('hidden', !match);
+            if (match) count++;
+        });
+        countEl.textContent = count;
+        // rebuild visible index for lightbox
+        buildVisibleList();
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            applyFilter(btn.dataset.filter);
+        });
+    });
+
+    // --- Lightbox ---
+    const lb     = document.getElementById('lightbox');
+    const lbImg  = document.getElementById('lbImg');
+    const lbCap  = document.getElementById('lbCaption');
+    const lbCnt  = document.getElementById('lbCounter');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+
+    let visibleItems = [];
+    let currentIdx = 0;
+
+    function buildVisibleList() {
+        visibleItems = items.filter(i => !i.classList.contains('hidden'));
+    }
+    buildVisibleList();
+
+    function openLightbox(idx) {
+        currentIdx = idx;
+        const item = visibleItems[currentIdx];
+        const img = item.querySelector('img');
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lbCap.textContent = item.dataset.caption || '';
+        lbCnt.textContent = (currentIdx + 1) + ' / ' + visibleItems.length;
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+    }
+
+    function showPrev() {
+        currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length;
+        openLightbox(currentIdx);
+    }
+    function showNext() {
+        currentIdx = (currentIdx + 1) % visibleItems.length;
+        openLightbox(currentIdx);
+    }
+
+    // click on item to open
+    items.forEach((item, i) => {
+        item.addEventListener('click', () => {
+            buildVisibleList();
+            const vIdx = visibleItems.indexOf(item);
+            if (vIdx !== -1) openLightbox(vIdx);
+        });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', showPrev);
+    lbNext.addEventListener('click', showNext);
+
+    // click backdrop to close
+    lb.addEventListener('click', e => {
+        if (e.target === lb) closeLightbox();
+    });
+
+    // keyboard
+    document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+    });
+})();
+</script>
+</body>
+</html>
